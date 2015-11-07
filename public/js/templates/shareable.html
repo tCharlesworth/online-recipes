@@ -1,0 +1,30 @@
+<div class='shareableContainer'>
+	<div class='shareable-content'>
+		<h4 ng-show='isRecipe'>Recipe: {{recipe.name}}</h4>
+		<h4 ng-show='!isRecipe'>Recipe Book: {{book.bookName}}</h4>
+		<div class='shareableMessageBox'>
+			<p class='shareable-message'>{{mail.message}}</p>
+			<p class='shareable-from'>From: {{mail.fromUser}}</p>
+		</div>
+		
+		<select ng-show="isRecipe" class='shareableInput' ng-model="selectedBook" ng-options="book.bookName for book in books">
+			<option value="">select a recipe book</option>
+		</select>
+		<p ng-show="isRecipe"></p>
+		<div ng-show="!isRecipe">
+			<p ng-show="isCopy">This is a copy, your changes will not affect their copy.</p>
+			<p ng-show="!isCopy">This is not a copy, your changes will affect their copy.</p>
+		</div>
+		
+		<div class='shareableButtons'>
+			<button ng-click="acceptMail(mail, selectedBook)">Accept</button>
+			<button ng-click="rejectMail(mail)">Reject</button>
+		</div>
+		
+	</div>
+	<!--<div class='shareable-preview'>
+		<recipe ng-show="isRecipe" editable='false' recipe='recipe' collapsible='false'></recipe>
+		<recipe-book ng-show="!isRecipe"></recipe-book>
+	</div>-->
+	<div class='stretch'><p></p></div>
+</div>

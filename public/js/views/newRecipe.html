@@ -1,0 +1,42 @@
+<div class='page-title'>
+    <h3>New Recipe</h3>
+</div>
+
+<input type='text' placeholder="Recipe Name" ng-model="recipe.name"/><br/>
+<select ng-options="section for section in recipeBook.sections" ng-model='recipe.recipeType'>
+	
+</select>
+<button class='add-button' ng-click="showNewSection = !showNewSection">+</button>
+<div ng-show="showNewSection">
+	<input type="text" placeholder="new section name" ng-model="newSection"/>
+	<button ng-click="addSection(newSection)">Add</button>
+</div>
+<div class='center'>
+	<div class='section instructions-margin'>
+		<div class='section-header'>
+			<h4 class='section-h4'>Ingredients</h4>
+			<button class='add-button-right' ng-click="addIngredient()">+</button>
+		</div>
+		<div class='item-container' ng-repeat="ingredient in recipe.ingredients track by $index">
+			<input placeholder='new ingredient' type="text" ng-model="ingredient" ng-change="recipe.ingredients[$index] = ingredient"/>
+			<button ng-click="removeIngredient($index)">Remove</button>
+		</div>
+	</div>
+	<br/>
+	<div class='section'>
+		<div class='section-header'>
+			<h4 class='section-h4'>Instructions</h4>
+			<button class='add-button-right' ng-click="addInstruction()">+</button>
+		</div>
+		<div class='item-container' ng-repeat="instruction in recipe.instructions track by $index">
+			<input placeholder='new instruction' type="text" ng-model="instruction" ng-change="recipe.instructions[$index] = instruction"/>
+			<button ng-click="removeInstruction($index)">Remove</button>
+		</div>
+	</div>
+</div>
+<br/>
+<button ng-click="saveRecipe()">Save</button>
+<hr/>
+<h3>Preview</h3>
+<recipe editable='false' recipe='recipe' collapsible='false'></recipe>
+<button ng-click="saveRecipe()">Save</button>

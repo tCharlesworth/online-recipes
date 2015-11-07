@@ -1,0 +1,12 @@
+<div class='bookSection'>
+    <h3>-----{{section}}-----</h3>
+    <div class="flexContainer">
+        <recipe class='recipe-block'
+            ng-click='openRecipe(recipe._id)' 
+            ng-repeat='recipe in recipes | filter: {recipeType: section, name: searchTerms}'
+            remove=''
+            edit='function(id)'
+            recipe='recipe'
+            ></recipe>
+    </div>
+</div>

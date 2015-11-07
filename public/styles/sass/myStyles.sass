@@ -1,0 +1,370 @@
+$color-primary: #10B4FB
+$color-primary-lighter: #48C7FE
+$color-primary-darker: #03ABF4
+$color-primary-darkest: #026D9B
+$color-secondary-lighter: #CFF0FE
+$color-secondary-lightest: #f5f5f5
+$color-font: black
+$color-border: $color-primary-darkest
+$color-placeholder: gray
+//$font-general: 'Julius Sans One', sans-serif
+$font-general: 'Lobster Two', cursive
+
+body
+	color: $color-font
+	margin: 0px
+	padding: 0px
+	font-family: $font-general
+	
+	h1
+		margin: 0px
+		font-family: $font-general
+		font-size: 3em
+		display: inline-block
+	
+nav
+	background-color: $color-primary
+	width: 100%
+	margin: 0px
+	padding: 5px
+	padding-left: 20px
+	border-bottom: thin solid $color-border
+	box-sizing: border-box
+	
+	.navButtons
+		float: right
+		margin: 0px 10px
+	
+button
+	border: none
+	border-top: 1px solid $color-primary-lighter
+	background: $color-primary-lighter
+	background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-primary-darkest))
+	background: -webkit-linear-gradient(top, $color-primary, $color-primary-darkest)
+	background: -moz-linear-gradient(top, $color-primary, $color-primary-darkest)
+	background: -ms-linear-gradient(top, $color-primary, $color-primary-darkest)
+	background: -o-linear-gradient(top, $color-primary, $color-primary-darkest)
+	padding: 10px 32px
+	border-radius: 4px
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	box-shadow: rgba(0,0,0,1) 0 1px 0
+	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0
+	-mox-box-shadow: rgba(0,0,0,1) 0 1px 0
+	text-shadow: rgba(0,0,0,1) 0 1px 0
+	font-size: 14px
+	text-decoration: none
+	vertical-align: center
+	color: white
+	display: inline-block
+	font-family: $font-general
+
+button:hover
+	background: $color-primary-darker
+	cursor: pointer
+
+button:active
+	background: $color-primary-darkest
+
+.menu-btn
+	color: $color-font
+	border-bottom: thin solid $color-border
+	padding: 5px
+	padding-bottom: 1px
+	cursor: pointer
+	display: inline-block
+	
+	p
+		color: $color-font
+
+.underline-effect
+	position: relative
+
+.underline-effect:after
+	display: block
+	position: absolute
+	left: 0
+	bottom: -3px
+	width: 0
+	height: 3px
+	background-color: $color-border
+	content: ''
+	transition: width 0.2s
+	
+.underline-effect:hover:after
+	width: 100%
+
+.page-wrapper
+	width: 80%
+	margin: auto
+	background-color: $color-secondary-lighter
+	padding: 20px
+
+.left
+	float: left
+	width: 45%
+	text-align: center
+	border-right: thin solid black
+
+.right
+	float: right
+	width: 45%
+	text-align: center
+
+.stretch
+	clear: both
+
+.page-title
+	border-bottom: thin solid black
+	font-size: 2em
+	margin-bottom: 20px
+	
+	h3
+		margin-top: 5px
+		margin-bottom: 20px
+
+input
+	text-align: center
+	color: black
+	width: 100%
+	max-width: 300px
+	padding: 5px
+	margin: 5px
+	box-sizing: border-box
+	border: none
+	border-bottom: thin solid black
+	background: none
+
+.recipes-message
+	margin-left: 50px
+
+input::-webkit-input-placeholder
+	color: $color-placeholder
+
+input:-moz-placeholder
+	color: $color-placeholder
+
+input::-moz-placeholder
+	color: $color-placeholder
+
+input:-ms-input-placeholder
+	color: $color-placeholder
+
+input:focus
+	border: none
+	border-bottom: thin solid $color-primary-darker
+	outline: none
+
+.flexContainerHorizontal
+	display: flex
+	overflow: scroll
+	padding: 10px
+
+.flexContainer
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	padding: 10px
+
+h4
+	margin-bottom: 2px
+	box-sizing: border-box
+	margin-left: 40px
+
+hr
+	border: none
+	border-top: thin solid black
+	
+.halfHr
+	width: 20%
+	margin: 0px
+	margin-left: 40px
+
+//            Directives          \\
+
+//Recipe Book
+.recipeBookContainer
+	width: 200px
+	height: 300px
+	margin: 20px
+	background-color: white
+	cursor: pointer
+	
+	h4
+		margin: 0px
+
+.recipeBookText
+	padding: 5px
+
+//Shareable
+.shareableContainer
+	background: $color-secondary-lightest
+	padding: 10px
+	border-radius: 10px
+	width: 425px
+	box-sizing: border-box
+	text-align: center
+	margin: 10px
+	display: inline-block
+
+.shareable-message
+	text-align: left
+	margin: 5px
+
+.shareable-from
+	text-align: right
+
+.center
+	margin: auto
+	width: 300px
+
+//Recipe
+.recipeTitle
+	margin: 10px
+
+.recipeActions
+	float: right
+
+
+//          Pages          \\
+//New Recipe
+.section
+	display: inline-block
+	width: 600px
+	min-height: 200px
+	text-align: center
+
+.section-h4
+	display: inline-block
+	text-align: left
+
+.add-button
+	width: 20px
+	height: 20px
+	padding: 0
+	border-radius: 10px
+	margin-right: 15px
+	margin-top: 15px
+
+.add-button-right
+	float: right
+	width: 20px
+	height: 20px
+	padding: 0
+	border-radius: 10px
+	margin-right: 15px
+	margin-top: 15px
+
+.section-header
+	border-bottom: thin solid black
+	margin-bottom: 20px
+
+.item-container
+	margin: 10px 0px
+
+.instructions-margin
+	margin-right: 40px
+
+select
+	min-width: 200px
+	border: none
+	border-bottom: thin solid black
+	background: none
+	font-family: $font-general
+
+select:focus
+	outline: none
+
+option
+	background: $color-secondary-lightest
+	font-family: $font-general
+
+//Open Recipes Page
+.open-recipes-container
+	border: thin solid gray
+	box-sizing: border-box
+	height: 100%
+	position: relative
+
+.open-recipes-tab-container
+	position: absolute
+	left: 0
+	top: 0
+	background: ghostwhitee
+	width: 200px
+	border-right: thin solid gray
+	height: inherit
+	box-sizing: border-box
+	overflow: hidden
+
+.open-recipes-current-view
+	float: right
+	width: calc( 100% - 200px )
+	padding: 20px
+	padding-left: 40px
+	box-sizing: border-box
+	background: white
+
+.open-tab-selected
+	background: dodgerblue
+
+.open-tab
+	display: block
+	padding: 3px 10px
+
+.open-tab:hover
+	cursor: pointer
+	background: lightblue
+
+.open-tab-title
+	text-align: center
+
+.open-tab-close
+	width: 10px
+
+.recipe-block
+	display: inline-block
+	width: 40%
+	background: $color-secondary-lightest
+	margin: 5px
+	padding: 10px
+
+.recipe-block:hover
+	cursor: pointer
+
+.open-tab-close:hover
+	color: red
+
+//Image Carousel
+.image-carousel-container
+	width: 100%
+	height: 400px
+	position: relative
+	background: black
+
+.image-carousel-image
+	width: 800px
+	height: 400px
+	margin: auto
+
+.image-carousel-selector-container
+	position: absolute
+	bottom: 0
+	left: 0
+	width: 100%
+	height: 30px
+	text-align: center
+	background: black
+
+.image-carousel-selector
+	display: inline-block
+	margin: 0 10px
+	width: 30px
+	height: 30px
+	border-radius: 10px
+	//opacity: 0.5
+	background: lime
+	cursor: pointer
+
+
+

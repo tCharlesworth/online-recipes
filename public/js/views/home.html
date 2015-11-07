@@ -1,0 +1,27 @@
+<div class='page-title'>
+    <h3>Home</h3>
+</div>
+
+<h4>Recipe Inbox</h4><hr class='halfHr'/>
+<br/>
+<div ng-show="!hasMail">
+	<p class='recipes-message'>No recipes to receive.</p>
+</div>
+<div ng-show="hasMail" class='flexContainer'>
+	<shareable ng-repeat="mail in recipeMail"></shareable>
+</div>
+
+
+<h4 class='section-h4'>Recipe Books </h4>
+<button ng-show="!showNewBook" class='add-button' ng-click="newRecipeBook()">+</button>
+
+<hr class='halfHr'/>
+
+<div ng-show="showNewBook">
+	<input type='text' placeholder="new recipe book name" ng-model="newBookName"/>
+	<button ng-click="addNewBook()">Add New Book</button>
+</div>
+
+<div class='flexContainer'>
+	<recipe-book ng-repeat='book in books track by $index'></recipe-book>
+</div>

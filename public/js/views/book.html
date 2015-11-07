@@ -1,0 +1,13 @@
+<div class='pageTitle'>
+    <h2>{{recipeBook.bookName}}</h2>
+</div>
+
+<div class='container'>
+    <div class='searchBar'>
+        <span class='right'><i class='fa fa-search'></i><input type='text' placeholder='search' ng-model='searchTerms' /></span>
+        <button ng-click="openNewRecipe()">New Recipe</button>
+        <button ng-click="shareBook()"><i class='fa fa-share'></i>  Share Book</button>
+        <button ng-click="deleteBook(recipeBook._id)"><i class='fa fa-trash-o'></i>  Delete Book</button>
+    </div>
+    <book-section ng-repeat='section in recipeBook.sections track by $index'></book-section>
+</div>

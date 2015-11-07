@@ -1,0 +1,14 @@
+<div class='pageTitle'>
+    <h3>Recipe Books</h3>
+</div>
+
+<div class='container'>
+    <button ng-show="!showNewBook" ng-click="newRecipeBook()">New Recipe Book</button>
+    <div ng-show="showNewBook">
+        <input type='text' placeholder="new recipe book name" ng-model="newBookName"/>
+        <button class='add-button' ng-click="addNewBook()">+</button>
+    </div>
+    <div class='flexContainer'>
+        <recipe-book ng-repeat='book in books track by $index'></recipe-book>
+    </div>
+</div>
