@@ -15,7 +15,7 @@ angular.module('recipeApp').controller('navCtrl', function($scope, $location, au
 	
 	$scope.logout = function() {
 		authService.logout().then(function(result) {
-			$location.path('/login');
+			$location.path('/landing');
 		});
 	}
 	

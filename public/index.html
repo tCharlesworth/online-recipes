@@ -11,7 +11,7 @@
 <body ng-app="recipeApp">
 	
 	<nav ng-controller="navCtrl">
-		<h1>Online Recipe Book</h1>
+		<h1 ng-click='toLocation("/landing")'>Online Recipe Book</h1>
 		<div class='navButtons'>
 			<p class="menu-btn underline-effect" ng-show="loggedIn" ng-click="toLocation('/home')">Home</p>
 			<p class='menu-btn underline-effect' ng-show="loggedIn" ng-click="toLocation('/openRecipes')">Open Recipes</p>
@@ -34,7 +34,6 @@
 		<!--Controllers-->
 		<script src='js/controllers/homeCtrl.js'></script>
 		<script src='js/controllers/landingCtrl.js'></script>
-		<!--<script src='js/controllers/booksCtrl.js'></script>-->
 		<script src='js/controllers/openRecipeCtrl.js'></script>
         <script src='js/controllers/bookCtrl.js'></script>
 		<script src='js/controllers/newRecipeCtrl.js'></script>
