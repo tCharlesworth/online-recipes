@@ -1,7 +1,7 @@
 //Special configuration file
 
 module.exports = {
-	mongooseUri: PROCESS.ENV.MONGOLAB_URI,
+	mongooseUri: process.env.MONGOLAB_URI,
 	
-	sessionSecret: PROCESS.ENV.SESSION_SECRET
+	sessionSecret: process.env.SESSION_SECRET
 }
