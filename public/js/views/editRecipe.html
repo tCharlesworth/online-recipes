@@ -2,10 +2,11 @@
     <h3>Edit Recipe</h3>
 </div>
 <div class='container'>
-	<input type='text' placeholder="Recipe Name" ng-model="recipe.name"/>
-
+	<input type='text' placeholder="Recipe Name" ng-model="recipe.name"/><br/>
+	
 	<select ng-options="section for section in recipeBook.sections" ng-model='recipe.recipeType'></select>
 	<button ng-click="showNewSection = !showNewSection" ng-show='!showNewSection'>Add Section</button>
+	<br/>Public?<input type='checkbox' ng-model='recipe.publicVisible'/><br/>
 	<div ng-show="showNewSection">
 		<input type="text" placeholder="new section name" ng-model="newSection"/>
 		<button ng-click="addSection(newSection)">Add</button>

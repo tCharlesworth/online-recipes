@@ -10,15 +10,6 @@ app.config(function($routeProvider) {
 			templateUrl: 'js/views/home.html',
 			controller: 'homeCtrl'
 		})
-		// .when('/recipebooks', {
-		// 	templateUrl: 'js/views/books.html',
-		// 	controller: 'booksCtrl',
-		// 	resolve: {
-		// 		books: function(dataService) {
-		// 			return dataService.getRecipeBooks();
-		// 		}
-		// 	}
-		// })
 		.when('/openRecipes', {
 			templateUrl: 'js/views/openRecipes.html',
 			controller: 'openRecipeCtrl'
@@ -66,6 +57,6 @@ app.config(function($routeProvider) {
 			controller: 'loginCtrl'
 		})
 		.otherwise({
-			redirectTo: '/login'
+			redirectTo: '/landing'
 		})
 })

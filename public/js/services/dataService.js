@@ -1,5 +1,5 @@
 angular.module('recipeApp').service('dataService', function ($location, $http) {
-    var serverURL = 'http://localhost:3000';
+    var serverURL = '';
 
     
     var simpleDataReturn = function(result) {

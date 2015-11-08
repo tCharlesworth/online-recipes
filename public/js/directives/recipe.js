@@ -19,8 +19,15 @@ angular.module('recipeApp').directive('recipe', function () {
             }
 
             $scope.editRecipe = function (rid) {
-                $scope.edit({ id: rid });
-                // $location.path('/recipes/edit/' + id);
+                $location.path('/edit/'+$routeParams.bookId+'/'+rid);
+            }
+            
+            $scope.openRecipe = function(rid) {
+                //Open Recipe
+                dataService.openARecipe(rid).then(function(result) {
+                //Redirect
+                $location.path('/openRecipes');
+        })
             }
 
             $scope.shareRecipe = function (id) {

@@ -1,5 +1,5 @@
 angular.module('recipeApp').service('authService', function($http) {
-	var baseUrl = 'http://localhost:3000'
+	var baseUrl = '';
 	
 	this.localSignup = function(newUser) {
 		//encrypt information here?

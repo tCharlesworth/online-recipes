@@ -45,12 +45,10 @@ passport.deserializeUser(function(obj, done) {
 
 module.exports = {
 	localSignup: function(req, res) {
-		console.log("RECEIVED", req.body);
 		mongoAuth.createUser(req, res, req.body);
 	},
 	
 	login: function(req, res) {
-		console.log("This only gets called with successful login");
 		res.status(200).send();
 	},
 	

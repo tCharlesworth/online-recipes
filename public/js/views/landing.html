@@ -1,12 +1,7 @@
 <image-carousel images='carouselImages'></image-carousel>
-<div>
-	<div class="minibanner">
-		<p>Signup</p>
-	</div>
-	<div class="minibanner">
-		<p>Browse Public Recipes<p>
-	</div>
-	<div class="minibanner">
-		<p>Login</p>
-	</div>
+<div class='flex-container'>
+	<page-preview title='Signup' desc='Get started saving and sharing your recipes today by signing up for a free account!'
+		ng-click='toPage("/login")'></page-preview>
+	<page-preview title='Login' desc='Already a user? Login to access your account' 
+		ng-click="toPage('/login')"></page-preview>
 </div>

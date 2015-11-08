@@ -264,7 +264,7 @@ option {
   position: absolute;
   left: 0;
   top: 0;
-  background: ghostwhite;
+  background: ghostwhitee;
   width: 200px;
   border-right: thin solid gray;
   height: inherit;
@@ -313,29 +313,79 @@ option {
   width: 100%;
   height: 400px;
   position: relative;
-  background: black; }
+  background: white;
+  box-sizing: border-box; }
 
 .image-carousel-image {
-  width: 800px;
+  width: 1000px;
   height: 400px;
-  margin: auto; }
+  margin: auto;
+  text-align: center; }
 
 .image-carousel-selector-container {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 30px;
-  text-align: center;
-  background: black; }
+  height: 36px;
+  text-align: center; }
 
 .image-carousel-selector {
   display: inline-block;
-  margin: 0 10px;
+  margin: 3px 10px;
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  background: lime;
+  opacity: 0.5;
+  background: white;
   cursor: pointer; }
+
+.image-carousel-image-wrapper {
+  margin: auto;
+  height: 400px;
+  width: 1000px;
+  overflow: hidden; }
+
+.flex-container {
+  display: flex;
+  justify-content: center; }
+
+page-preview {
+  margin: 10px; }
+
+.page-preview-container {
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px; }
+
+.page-preview-title {
+  margin-left: 20px; }
+
+.page-preview-content {
+  position: relative;
+  cursor: pointer;
+  background: white;
+  height: 200px; }
+
+.page-preview-content {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-top: thin solid lightgray; }
+
+.page-preview-content:hover {
+  transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  translate: 0px, -100px;
+  -webkit-transform: translate(0, -100px);
+  -mox-transform: translate(0, -100px);
+  -o-transform: translate(0, -100px); }
 
 /*# sourceMappingURL=myStyles.css.map */

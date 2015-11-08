@@ -1,6 +1,6 @@
 <div class='recipe-tab' ng-click='toggleCollapse()'>
-    <h3 class='recipeTitle'>{{recipe.name}}</h3>
-    <div class='recipeActions'>
+    <h3 class='recipeTitle' ng-click='openRecipe(recipe._id)'>{{recipe.name}}</h3>
+    <div class='recipeActions' ng-show='hideActions'>
         <button class='actionButton' ng-click="deleteRecipe()" title='Delete Recipe'><i class='fa fa-trash'></i></button>
         <button class='actionButton' ng-click='shareRecipe(recipe._id)' title='Share Recipe'><i class='fa fa-share'></i></button>
         <button class='actionButton' ng-click="editRecipe(recipe._id)" title='Edit Recipe'><i class='fa fa-pencil-square-o'></i></button>
