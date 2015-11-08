@@ -15,7 +15,7 @@ var session = require('express-session');
 console.log('   setting middleware...');
 var app = express();
 //Middleware
-app.use(express.static(__dirname + './public'));
+app.use(express.static('./public'));
 app.use(bodyparser.json());
 app.use(session({ secret: config.sessionSecret }));
 app.use(passport.initialize());
