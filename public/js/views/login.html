@@ -3,16 +3,20 @@
 </div>
 <div class='left'>
 	<h3>Sign Up</h3>
-	<input id='newUname' type='text' ng-model="newUser.username" placeholder="username"/><br/>
-	<input id='newEmail' type='email' ng-model="newUser.contactEmail" placeholder="email"/><br/>
-	<input id='newPword' type='password' ng-model="newUser.password" placeholder="password"/><br/>
-	<input id='confirmPword' type='password' ng-model="confirmPassword" placeholder="confirm password"/><br/>
-	<button ng-click="localSignup(newUser)">Signup</button>
+	<form ng-submit="localSignup(newUser)">
+		<input id='newUname' type='text' ng-model="newUser.username" placeholder="username"/><br/>
+		<input id='newEmail' type='email' ng-model="newUser.contactEmail" placeholder="email"/><br/>
+		<input id='newPword' type='password' ng-model="newUser.password" placeholder="password"/><br/>
+		<input id='confirmPword' type='password' ng-model="confirmPassword" placeholder="confirm password"/><br/>
+		<button ng-click="localSignup(newUser)">Signup</button>
+	</form>
 </div>
 <div class="right">
 	<h3>Login</h3>
-	<input id='loginUname' type='text' ng-model="tryUser.username" placeholder="username"/><br/>
-	<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
-	<button ng-click="localLogin(tryUser)">Login</button>		
+	<form ng-submit="localLogin(tryUser)">
+		<input id='loginUname' type='text' ng-model="tryUser.username" placeholder="username"/><br/>
+		<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
+		<button ng-click="localLogin(tryUser)">Login</button>
+	</form>		
 </div>
 <div class='stretch'><p></p></div>
