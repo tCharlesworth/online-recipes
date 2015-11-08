@@ -4,7 +4,7 @@ angular.module('recipeApp').directive('pagePreview', function() {
 		scope: {
 			title: '@',
 			desc: '@',
-			pic: '='
+			pic: '@'
 		},
 		templateUrl: 'js/templates/pagePreview.html',
 		controller: function($scope, $location) {
