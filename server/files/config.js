@@ -3,5 +3,5 @@
 module.exports = {
 	mongooseUri: process.env.MONGOLAB_URI,
 	
-	sessionSecret: 'developmentsecret'
+	sessionSecret: process.env.SESSION_SECRET || 'developmentSessionSecret'
 }
