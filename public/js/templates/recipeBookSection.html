@@ -1,5 +1,6 @@
 <div class='bookSection'>
-    <h3>-----{{section}}-----</h3>
+    <h3 class='section-title'>{{section}}</h3>
+    <hr/>
     <div class="flexContainer">
         <recipe class='recipe-block' 
             ng-repeat='recipe in recipes | filter: {recipeType: section, name: searchTerms}'

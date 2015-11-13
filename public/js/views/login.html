@@ -1,22 +1,22 @@
 <div class='page-title'>
     <h3>Login</h3>
 </div>
-<div class='left'>
+<div class='left-container'>
 	<h3>Sign Up</h3>
-	<form ng-submit="localSignup(newUser)">
+	<form class='l-form' ng-submit="localSignup(newUser)">
 		<input id='newUname' type='text' ng-model="newUser.username" placeholder="username"/><br/>
 		<input id='newEmail' type='email' ng-model="newUser.contactEmail" placeholder="email"/><br/>
 		<input id='newPword' type='password' ng-model="newUser.password" placeholder="password"/><br/>
 		<input id='confirmPword' type='password' ng-model="confirmPassword" placeholder="confirm password"/><br/>
-		<button ng-click="localSignup(newUser)">Signup</button>
+		<button class='form-button' ng-click="localSignup(newUser)">Signup</button>
 	</form>
 </div>
-<div class="right">
+<div class="right-container">
 	<h3>Login</h3>
-	<form ng-submit="localLogin(tryUser)">
+	<form class='l-form' ng-submit="localLogin(tryUser)">
 		<input id='loginUname' type='text' ng-model="tryUser.username" placeholder="username"/><br/>
 		<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
-		<button ng-click="localLogin(tryUser)">Login</button>
+		<button class='form-button' ng-click="localLogin(tryUser)">Login</button>
 	</form>		
 </div>
 <div class='stretch'><p></p></div>
