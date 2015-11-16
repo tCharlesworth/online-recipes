@@ -36,3 +36,31 @@ hr {
 	display: flex;
 	justify-content: center;
 }
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+}
+
+/*Recipe Books Page*/
+.recipeBookContainer {
+	display: inline-block;
+}
+
+.recipeBookContainer:hover {
+	cursor: pointer;
+}
+
+/*Book Page*/
+.recipe-tab {
+	width: 80%;
+	padding: 20px;
+	background: ghostwhite;
+	box-shadow: 2px 2px lightgray;
+	color: #4C4C4C;
+	margin: auto;
+}
+
+.recipe-tab:hover {
+	cursor: pointer;
+}
