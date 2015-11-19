@@ -253,6 +253,7 @@ module.exports = {
 
 	addRecipe: function (req, res) {
 		var info = req.body;
+		console.log('GOT', info);
 		//first add recipe
 		Recipe.create(info.recipe, function (err, result) {
 			if (err) {

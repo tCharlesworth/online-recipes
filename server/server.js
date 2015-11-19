@@ -65,7 +65,7 @@ console.log("   connecting to mongo database...");
 mongoose.connect(config.mongooseUri);
 
 
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 3000;
 app.listen(port, function () {
 	console.log("Server started, listening on port "+port+".");
 });

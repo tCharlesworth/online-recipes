@@ -33,6 +33,7 @@ angular.module('recipeApp').controller('newRecipeCtrl', function($location, data
 		//TRIM ALL! HERE DO NOT MISS THIS CRAZY LONG COMMENT?REMINDER
 		$scope.recipe.name = $scope.recipe.name.trim();
 		$scope.recipe.type = $scope.recipe.recipeType.trim();
+		console.log($scope.recipe);
 		if(!$scope.recipe.name || !$scope.recipe.recipeType)
 			return;
 		dataService.saveRecipe($routeParams.bookId, $scope.recipe).then(function(response){
