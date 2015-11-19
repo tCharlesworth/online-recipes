@@ -12,16 +12,18 @@
 </div>
 
 
-<h4 class='section-h4'>Recipe Books </h4>
-<button ng-show="!showNewBook" class='add-button' ng-click="newRecipeBook()">+</button>
+<h4 class='title'>Recipe Books </h4>
+<div class='new-book'>
+	<button ng-show="!showNewBook" class='add-button' ng-click="newRecipeBook()">New Book</button>
+	<input ng-show="showNewBook" id='new-book-input' type='text' placeholder="name" ng-model="newBookName"/>
+	<button ng-show="showNewBook" class='add-button input-size' ng-click="addNewBook()">+</button>
+</div>
 
 <hr class='halfHr'/>
 
-<div ng-show="showNewBook">
-	<input type='text' placeholder="new recipe book name" ng-model="newBookName"/>
-	<button ng-click="addNewBook()">Add New Book</button>
-</div>
+
 
 <div class='flexContainer'>
 	<recipe-book ng-repeat='book in books track by $index'></recipe-book>
 </div>
+

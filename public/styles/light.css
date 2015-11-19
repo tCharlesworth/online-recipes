@@ -300,7 +300,10 @@ option {
   color: #949292;
 }
 input[type="checkbox"] {
-  opacity: 0;
+  opacity: 1;
+  width: 1em;
+  height: 1em;
+  margin-left: 1em;
   position: absolute;
 }
 input[type="checkbox"],

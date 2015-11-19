@@ -4,7 +4,8 @@ angular.module('recipeApp').directive('recipe', function () {
         scope: {
             recipe: '=',
             remove: '&',
-            edit: '&'
+            edit: '&',
+            openable: '&'
         },
         restrict: 'E',
         controller: function ($scope, $location, dataService, $routeParams) {
@@ -23,6 +24,8 @@ angular.module('recipeApp').directive('recipe', function () {
             }
             
             $scope.openRecipe = function(rid) {
+                if(!$scope.openable)
+                    return;
                 //Open Recipe
                 dataService.openARecipe(rid).then(function(result) {
                 //Redirect

@@ -7,20 +7,26 @@
 		<div class='open-tab' ng-repeat='item in openRecipes track by $index' ng-click='selectRecipe($index)' ng-class="{'open-tab-selected' : $index===selectedRecipe}">
 			<p>
 				<span class='open-tab-title'>{{item.name}}</span>
-				<span class='open-tab-close right' ng-click='removeRecipe($index)'>X</span>
+				<span class='open-tab-close' ng-click='removeRecipe($index)'>X</span>
 			</p>
 		</div>
 	</div>
 	<div class='open-recipes-current-view'>
+		
+		<div class='open-recipes-blank-container' ng-show="openRecipes.length < 1">
+			<p>You have no recipes open</p>
+		</div>
+		
 		<h4>{{recipe.name}}</h4>
-		<h5>Ingredients</h5>
+		<hr/>
+		<h5 ng-show="openRecipes.length > 0">Ingredients</h5>
 		<div class='open-recipe-ingredients'>
 			<ul>
 				<li ng-repeat='item in recipe.ingredients'>{{item}}</li>
 			</ul>
 		</div>
 		<div class='open-recipe-instructions'>
-		<h5>Instructions</h5>
+		<h5 ng-show="openRecipes.length > 0">Instructions</h5>
 			<ol>
 				<li ng-repeat='item in recipe.ingredients'>{{item}}</li>
 			</ol>
