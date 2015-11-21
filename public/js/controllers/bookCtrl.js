@@ -47,6 +47,15 @@ angular.module('recipeApp').controller('bookCtrl', function ($scope, $location, 
         }
     }
     
+    $scope.deleteRecipe = function(id) {
+        console.log("DELETING");
+        if(confirm('Are you sure you want to delete this recipe?')) {
+            dataService.deleteRecipe($routeParams.bookId, id).then(function(res){
+                $scope.getRecipes();
+            })
+        }
+    }
+    
     $scope.getRecipes();
 
 });

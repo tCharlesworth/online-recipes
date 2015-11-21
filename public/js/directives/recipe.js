@@ -5,10 +5,14 @@ angular.module('recipeApp').directive('recipe', function () {
             recipe: '=',
             remove: '&',
             edit: '&',
-            openable: '&'
+            openable: '&',
+            actions: '&'
         },
         restrict: 'E',
         controller: function ($scope, $location, dataService, $routeParams) {
+            if ($scope.actions == null) {
+                $scope.actions = false;
+            }
             $scope.showMe = false;
             $scope.toggleCollapse = function () {
                 $scope.showMe = !$scope.showMe;
@@ -20,21 +24,26 @@ angular.module('recipeApp').directive('recipe', function () {
             }
 
             $scope.editRecipe = function (rid) {
-                $location.path('/edit/'+$routeParams.bookId+'/'+rid);
+                $location.path('/edit/' + $routeParams.bookId + '/' + rid);
             }
-            
-            $scope.openRecipe = function(rid) {
-                if(!$scope.openable)
+
+            $scope.openRecipe = function (rid) {
+                if (!$scope.openable)
                     return;
                 //Open Recipe
-                dataService.openARecipe(rid).then(function(result) {
-                //Redirect
-                $location.path('/openRecipes');
-        })
+                dataService.openARecipe(rid).then(function (result) {
+                    //Redirect
+                    $location.path('/openRecipes');
+                })
             }
 
             $scope.shareRecipe = function (id) {
                 $location.path('/share/recipe/' + id);
+            }
+
+            $scope.toggleActions = function (open) {
+                if ($scope.actions)
+                    $scope.hideActions = !open;
             }
 
         }

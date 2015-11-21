@@ -4,7 +4,8 @@
     <div class="flexContainer">
         <recipe class='recipe-block' 
             ng-repeat='recipe in recipes | filter: {recipeType: section, name: searchTerms}'
-            remove=''
+            remove='deleteRecipe(id)'
+            actions='true'
             edit='function(id)'
             recipe='recipe'
             ></recipe>

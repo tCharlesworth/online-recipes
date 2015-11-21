@@ -12,7 +12,11 @@ angular.module('recipeApp').controller('newRecipeCtrl', function($location, data
 		dataService.getRecipeBook($routeParams.bookId).then(function(response){
 			$scope.recipeBook = response;
 		});
-	}	
+	}
+	
+	$scope.toHome = function() {
+		$location.path('/home');
+	}
 	
 	$scope.addSection = function(sectionName) {
 		$scope.showNewSection = false;

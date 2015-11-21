@@ -6,7 +6,7 @@
 	
 	<select ng-options="section for section in recipeBook.sections" ng-model='recipe.recipeType'></select>
 	<button ng-click="showNewSection = !showNewSection" ng-show='!showNewSection'>Add Section</button>
-	<br/>Public?<input type='checkbox' ng-model='recipe.publicVisible'/><br/>
+	<br/>
 	<div ng-show="showNewSection">
 		<input type="text" placeholder="new section name" ng-model="newSection"/>
 		<button ng-click="addSection(newSection)">Add</button>
@@ -36,10 +36,5 @@
 		<button class='addButton' ng-click="addInstruction()">Add</button>
 	</div>
 	<button ng-click="saveRecipe(recipe)">Save Changes</button>
-	<button ng-click="cancelEdit()">Cancel</button>
-	<hr/>
-	<h3>Preview</h3>
-	<recipe editable='false' recipe='recipe' collapsible='false'></recipe>
-	<button ng-click="saveRecipe()">Save Changes</button>
 	<button ng-click="cancelEdit()">Cancel</button>
 </div>
