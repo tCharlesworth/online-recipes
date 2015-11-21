@@ -28,7 +28,9 @@ angular.module('recipeApp').controller('bookCtrl', function ($scope, $location, 
         dataService.openARecipe(id).then(function(result) {
             //Redirect
             $location.path('/openRecipes');
-        })
+        }, function(err){
+            console.log('WE HAD AN ERROR');
+        });
     }
     
     $scope.editRecipe = function(id) {

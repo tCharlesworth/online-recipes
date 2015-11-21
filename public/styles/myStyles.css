@@ -39,6 +39,10 @@ hr {
 	clear: both;
 }
 
+input[type='text'],input[type='password'],input[type='text'] {
+	box-sizing: border-box;
+}
+
 .section-title {
 	text-align: center;
 	color: #4C4C4C;
