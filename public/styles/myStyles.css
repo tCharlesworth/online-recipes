@@ -1,3 +1,7 @@
+body {
+	background: #F2F3EF;
+}
+
 .left-container {
 	width: 40%;
 	float: left;
@@ -35,7 +39,7 @@ hr {
 }
 
 .section-title {
-	float: right;
+	text-align: center;
 	color: #4C4C4C;
 }
 
@@ -88,20 +92,21 @@ h4 {
 	cursor: pointer;
 }
 
-.recipeBookContainer {
+/*.recipeBookContainer {
 	background-color: lightgray;
-}
+}*/
 
 .recipeBookText {
 	padding: 5px;
 	box-sizing: border-box;
 }
 
+
 /*Book Page*/
 .recipe-tab {
 	width: 80%;
 	padding: 20px;
-	background: ghostwhite;
+	background: #F2F3EF;
 	box-shadow: 2px 2px lightgray;
 	color: #4C4C4C;
 	margin: auto;
@@ -109,6 +114,7 @@ h4 {
 }
 
 .section {
+	margin-top: 10px;
 	padding: 10px;
 	border-left: 1px solid gray;
 	border-bottom: 1px solid gray;
@@ -116,6 +122,7 @@ h4 {
 }
 
 .recipe-tab:hover {
+	background: #B6E3F7;
 	cursor: pointer;
 }
 
@@ -202,7 +209,7 @@ h4 {
 }
 
 .open-tab-selected {
-	background: gray;
+	background: skyblue;
 }
 
 .open-recipes-blank-container {
@@ -243,7 +250,7 @@ h4 {
 .image-carousel-selector {
 	display: inline-block;
 	border-radius: 50%;
-	border: 1px solid white;
+	border: 1px solid #F2F3EF;
 	width: 20px;
 	height: 20px;
 	margin: 0px 10px;
@@ -254,18 +261,37 @@ h4 {
 
 .image-carousel-selector:hover {
 	border: 1px solid black;
-	background: white;
+	background: #F2F3EF;
 }
 
 .page-preview-container {
-	background-color: lightgray;
+	border-radius: 50%;
 	overflow: hidden;
 	width: 200px;
-	height: 250px;
-	margin: 10px;
+	height: 200px;
+	margin: 40px;
 	box-sizing: border-box;
+	position: relative;
+	background: skyblue;
+}
+
+.page-preview-content {
+	width: 200px;
+	height: 200px;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+}
+
+.page-preview-description {
+	font-size: 24px;
+	margin-top: 30px;
 }
 
 .page-preview-container:hover {
 	cursor: pointer;
 }
+
+/*make styles mobile at 650px and lower*/
