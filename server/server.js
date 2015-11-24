@@ -10,11 +10,13 @@ var bodyparser = require('body-parser');
 var passport = require('passport');
 var passportCtrl = require('./controllers/passportCtrl.js');
 var session = require('express-session');
+var cors = require('cors');
 
 
 console.log('   setting middleware...');
 var app = express();
 //Middleware
+app.use(cors());
 app.use(express.static(__dirname+'/../public'));
 app.use(bodyparser.json());
 app.use(session({ secret: config.sessionSecret }));
