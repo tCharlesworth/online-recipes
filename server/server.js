@@ -66,6 +66,11 @@ app.get('/logout', passportCtrl.logout);
 console.log("   connecting to mongo database...");
 mongoose.connect(config.mongooseUri);
 
+//Mobile Endpoints
+app.post('/mobileDownload', 
+  passport.authenticate('local'), 
+  mongoData.getMobileData);
+
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {

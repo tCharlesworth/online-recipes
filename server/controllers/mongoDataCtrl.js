@@ -501,6 +501,20 @@ module.exports = {
 				});
 			}
 		}
+	},
+	
+	getMobileData: function(req, res) {
+		User.findById(req.user._id, function (err, result) {
+
+			RecipeBook.find({ '_id': { $in: result.recipeBooks } }).populate('recipes').exec(function (err, result) {
+				if (err) {
+					handleError(err, req, res);
+				} else {
+					res.json(result);
+				}
+			})
+
+		})
 	}
 }
 
