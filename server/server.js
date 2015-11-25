@@ -71,6 +71,8 @@ app.post('/mobileDownload',
   passport.authenticate('local'), 
   mongoData.getMobileData);
 
+app.post('/mobile/newBook', mongoData.mobileNewBook);
+app.post('/mobile/newRecipe', mongoData.mobileNewRecipe)
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {

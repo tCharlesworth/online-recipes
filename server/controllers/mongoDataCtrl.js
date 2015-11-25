@@ -4,30 +4,30 @@ var User = require('../models/user');
 var Shareable = require('../models/shareable');
 
 module.exports = {
-	
-	openRecipe: function(req, res) {
-		User.findByIdAndUpdate(req.user._id, { $addToSet: {openRecipes: req.params.id}}, function(err, result) {
-			if(err) {
+
+	openRecipe: function (req, res) {
+		User.findByIdAndUpdate(req.user._id, { $addToSet: { openRecipes: req.params.id } }, function (err, result) {
+			if (err) {
 				handleError(err, req, res);
 			} else {
 				res.json(result);
 			}
 		});
 	},
-	
-	getOpenRecipes: function(req, res) {
-		User.findOne({_id: req.user._id}).populate('openRecipes').exec(function(err, result) {
-			if(err) {
+
+	getOpenRecipes: function (req, res) {
+		User.findOne({ _id: req.user._id }).populate('openRecipes').exec(function (err, result) {
+			if (err) {
 				handleError(err, req, res);
 			} else {
 				res.json(result.openRecipes);
 			}
 		})
 	},
-	
-	removeOpenRecipe: function(req, res) {
-		User.findByIdAndUpdate(req.user._id, {$pull: {openRecipes: req.params.id}}, function(err, result) {
-			if(err) {
+
+	removeOpenRecipe: function (req, res) {
+		User.findByIdAndUpdate(req.user._id, { $pull: { openRecipes: req.params.id } }, function (err, result) {
+			if (err) {
 				handleError(err, req, res);
 			} else {
 				res.json(result);
@@ -437,7 +437,7 @@ module.exports = {
 											handleError(err100, req, res);
 										} else {
 											newRecipes.push(result100._id);
-											if(index+1 === total) {
+											if (index + 1 === total) {
 												console.log("READY");
 												newObj.recipes = newRecipes;
 												//Recipes should be copies
@@ -466,7 +466,7 @@ module.exports = {
 													}
 												});
 											} else {
-												newObj.recipes = newRecipes;												
+												newObj.recipes = newRecipes;
 											}
 										}
 									})
@@ -502,8 +502,8 @@ module.exports = {
 			}
 		}
 	},
-	
-	getMobileData: function(req, res) {
+
+	getMobileData: function (req, res) {
 		User.findById(req.user._id, function (err, result) {
 
 			RecipeBook.find({ '_id': { $in: result.recipeBooks } }).populate('recipes').exec(function (err, result) {
@@ -514,6 +514,58 @@ module.exports = {
 				}
 			})
 
+		})
+	},
+
+	mobileNewBook: function (req, res) {
+		var data = req.body;
+		User.findOne({ username: data.credentials.username }).exec(function (err, result) {
+			if (err) {
+				handleError(err, req, res);
+			} else {
+				//Create new Book
+				RecipeBook.create({ bookName: data.bookName }, function (err2, result2) {
+					if (err2) {
+						handleError(err2, req, res);
+					} else {
+						//Store book in user
+						User.findOne({ _id: result._id }).update({ $push: { recipeBooks: result2._id } }).exec(function (err3, result3) {
+							if (err3) {
+								handleError(err3, req, res);
+							} else {
+								res.json(result2);
+							}
+						})
+					}
+				})
+			}
+		})
+	},
+	
+	mobileNewRecipe: function(req, res) {
+		var data = req.body;
+		//get user
+		User.findOne({username: data.credentials.username}).exec(function(err, result) {
+			if(err) {
+				handleError(err, req, res);
+			} else {
+				//create recipe
+				Recipe.create(data.newRecipe, function(err2, result2) {
+					if(err2) {
+						handleError(err2, req, res);
+					} else {
+						//add to recipe book
+						RecipeBook.findByIdAndUpdate(data.bookId, {$push: {recipes: result2._id}}, function(err3, result3) {
+							if(err3) {
+								handleError(err3, req, res);
+							} else {
+								//All done :)
+								res.json(result2);
+							}
+						})
+					}
+				})
+			}
 		})
 	}
 }
