@@ -1,22 +1,26 @@
-<div class='page-title'>
-    <h3>Login</h3>
+<div class="loginBackground">
+	<div class="loginBackgroundColor"></div>
+	<div class="loginToggleBox">
+		<div class="loginButtons">
+			<div ng-class='{loginSelected: showSignUp}' class="loginToggle loginLeft" ng-click="showSignUp = true">Sign Up</div>
+			<div ng-class='{loginSelected: !showSignUp}' class="loginToggle loginRight" ng-click="showSignUp = false">Sign In</div>
+		</div>
+		<div class='loginBox' ng-show="showSignUp">
+			<form ng-submit="localSignup(newUser)">
+				<input id='newUname' type='text' ng-model="newUser.username" placeholder="username"/><br/>
+				<input id='newEmail' type='email' ng-model="newUser.contactEmail" placeholder="email"/><br/>
+				<input id='newPword' type='password' ng-model="newUser.password" placeholder="password"/><br/>
+				<input id='confirmPword' type='password' ng-model="confirmPassword" placeholder="confirm password"/><br/>
+				<button class='form-button' ng-click="localSignup(newUser)">Sign Up</button>
+			</form>
+		</div>
+		<div class='loginBox' ng-show="!showSignUp">
+			<form ng-submit="localLogin(tryUser)">
+				<input id='loginUname' type='text' ng-model="tryUser.username" placeholder="username"/><br/>
+				<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
+				<button class='form-button' ng-click="localLogin(tryUser)">Sign In</button>
+			</form>
+		</div>
+		<div class='stretch'><p></p></div>
+	</div>
 </div>
-<div class='left-container'>
-	<h3>Sign Up</h3>
-	<form class='l-form' ng-submit="localSignup(newUser)">
-		<input id='newUname' type='text' ng-model="newUser.username" placeholder="username"/><br/>
-		<input id='newEmail' type='email' ng-model="newUser.contactEmail" placeholder="email"/><br/>
-		<input id='newPword' type='password' ng-model="newUser.password" placeholder="password"/><br/>
-		<input id='confirmPword' type='password' ng-model="confirmPassword" placeholder="confirm password"/><br/>
-		<button class='form-button' ng-click="localSignup(newUser)">Signup</button>
-	</form>
-</div>
-<div class="right-container">
-	<h3>Login</h3>
-	<form class='l-form' ng-submit="localLogin(tryUser)">
-		<input id='loginUname' type='text' ng-model="tryUser.username" placeholder="username"/><br/>
-		<input id='loginPword' type='password' ng-model="tryUser.password" placeholder="password"/><br/>
-		<button class='form-button' ng-click="localLogin(tryUser)">Login</button>
-	</form>		
-</div>
-<div class='stretch'><p></p></div>

@@ -1,28 +1,29 @@
-<image-carousel images='carouselImages'></image-carousel>
+<div class="bigPic"></div>
+<!--<image-carousel images='carouselImages'></image-carousel>-->
 <div class='flex-container'>
 	
 	<!--Sign Up Bubble-->
-	<div class='page-preview-container' ng-click='toPage("/login")'>
-		<!--<img class='page-preview-image' width="200px" height="200px" ng-src='{{pic}}'/>-->
-		<div class='page-preview-content'>
+	<div class='pageBox signup' ng-click='toPage("/login")'>
+		<div class="color signupColor"></div>
+		<div class='pageBox-content'>
 			<h4 class='page-preview-title'>Sign Up</h4>
 			<p class='page-preview-description'><i class='fa fa-user-plus'></i></p>
 		</div>
 	</div>
 	
 	<!--Sign In Bubble-->
-	<div class='page-preview-container' ng-click='toPage("/login")'>
-		<!--<img class='page-preview-image' width="200px" height="200px" ng-src='{{pic}}'/>-->
-		<div class='page-preview-content'>
+	<div class='pageBox signin' ng-click='toPage("/login")'>
+		<div class="color signin-color"></div>
+		<div class='pageBox-content'>
 			<h4 class='page-preview-title'>Sign In</h4>
 			<p class='page-preview-description'><i class='fa fa-user'></i></p>
 		</div>
 	</div>
-	
-	
-	
-	
-	
+
+
+
+
+
 	<!--<page-preview 
 		title='Signup' 
 		desc='Get started saving and sharing your recipes today by signing up for a free account!'
